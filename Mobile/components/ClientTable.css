@@ -1,0 +1,30 @@
+.client-table {
+    margin-bottom: 16px;
+}
+.table-clients {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-clients .head-row {
+    border-top: 1px solid dimgray;
+    border-bottom: 1px solid dimgray;
+}
+.table-clients th {
+    padding: 8px 4px;
+    font-weight: 400;
+}
+.table-clients .head-family {
+    width: 160px;
+}
+.table-clients .head-name {
+    width: 160px;
+}
+.table-clients .head-secname {
+    width: 160px;
+}
+.table-clients .head-balance {
+    width: 100px;
+}
+.table-clients .head-secname {
+    width: 160px;
+}

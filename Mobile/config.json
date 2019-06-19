@@ -1,0 +1,23 @@
+{
+    "shopname": "Sotovik2",
+    "company_names": [
+        {"code":1, "name":"Velcom", "act": true},
+        {"code":2, "name":"MTS", "act": false}
+    ],
+    "showeditform": false,
+    "filter_names": [
+        {"code":"all", "name":"Все"},
+        {"code":"active", "name":"Активные"},
+        {"code":"block", "name":"Заблокированные"}
+    ],
+    "header_table_names": {
+        "id": "Код",
+        "family":"Фамилия",
+        "name":"Имя",
+        "secname":"Отчество",
+        "balance":"Баланс",
+        "stat": "Статус",
+        "edito": "Редактировать",
+        "deleto": "Удалить"
+    }
+}

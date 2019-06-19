@@ -1,0 +1,11 @@
+.company-filter .but-filter {
+    width: 80px;
+    padding: 6px;
+    margin-right: 6px;
+}
+.company-filter .separ {
+    margin: 16px 0;
+    border-style: solid;
+    border-bottom: 0;
+    border-color: darkgrey;
+}

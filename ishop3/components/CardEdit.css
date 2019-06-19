@@ -1,0 +1,9 @@
+.card-edit_row-title {
+    display: inline-block;
+    width: 140px;
+}
+
+.valid-field {
+    margin-left: 10px;
+    color: red;
+}

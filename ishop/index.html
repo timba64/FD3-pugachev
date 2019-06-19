@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>iShop</title>
+</head>
+<body>
+  <div id="container" class="container"></div> 
+      
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+      
+  <script src="InetShop.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="InetShop.css" />
+
+  <script>
+
+    var shopName='iShop';
+    var prodArr=[ 
+      {name:'htcm10',code:1,price:650,count:22,img:'img/htcm10.jpg'}, 
+      {name:'iphone7',code:2,price:850,count:13,img:'img/iphone7.jpg'}, 
+      {name:'lenovok6',code:3,price: 450,count:44,img:'img/lenovok6.jpg'},
+      {name:'samss7',code:4,price: 500,count:24,img:'img/samss7.jpg'} 
+    ];
+    var headArr=[
+      {code:1, name:'Наименование'},
+      {code:2, price:'Цена'},
+      {code:3, qty:'Кол-во'},
+      {code:4, img:'Изображение'}
+    ];
+
+    ReactDOM.render(
+      React.createElement(InetShop,{shopname:shopName, tablehead:headArr, products:prodArr}), 
+      document.getElementById('container') 
+    );
+
+  </script>
+
+</body> 
+</html>

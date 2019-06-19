@@ -1,0 +1,42 @@
+.table-prods {
+    border-collapse: collapse;
+}
+.InetShop .head-row {
+    text-align: center;
+    background-color: olive;
+    color: #fff;
+}
+.InetShop .head-row th {
+    padding: 10px;
+}
+.InetShop .head-name {
+    width: 40%;
+    text-align: left;
+}
+.InetShop .head-price {
+    width: 60px;
+}
+.InetShop .qty {
+    width: 60px;
+}
+.InetShop .head-img {
+    width: 160px;
+    text-align: center;
+}
+.InetShop .prod-name {
+    width: 40%;
+}
+.InetShop .prod-price {
+    width: 60px;
+}
+.InetShop .qty {
+    width: 60px;
+}
+.InetShop .prod-img {
+    width: 80px;
+}
+
+.InetShop .prod-img img {
+    width: 100%;
+    height: auto;
+}

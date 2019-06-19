@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="For homework number 2"/>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Filter</title>
+</head>
+<body>
+  <div id="container" class="container"></div> 
+      
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+      
+  <script src="Filter.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="Filter.css" />
+
+  <script>
+    var shopName='iShop';
+    var wordArr=[ 
+      {name:'частнопредпринимательский',code:0}, 
+      {name:'переосвидетельствоваться',code:1}, 
+      {name:'субстанционализироваться',code:2},
+      {name:'высокопревосходительство',code:3},
+      {name:'одиннадцатиклассница',code:4},
+      {name:'делопроизводительница',code:5} 
+    ];
+
+    ReactDOM.render(
+      React.createElement(Filter,{shopname:shopName, wordlist:wordArr }), 
+      document.getElementById('container') 
+    );
+
+  </script>
+
+</body> 
+</html>

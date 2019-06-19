@@ -1,0 +1,19 @@
+.clients-row.row-active {
+    background-color: antiquewhite;
+}
+.clients-row td {
+    padding: 6px;
+    font-weight: 300;
+}
+.clients-row .centr {
+    text-align: center;
+}
+.status {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: brown;
+}
+.status-active {
+    background-color: cadetblue;
+}

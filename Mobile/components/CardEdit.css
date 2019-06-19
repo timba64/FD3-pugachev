@@ -1,0 +1,13 @@
+.card-edit_row-title {
+    display: inline-block;
+    width: 100px;
+    font-weight: 300;
+}
+.card-edit_input {
+    padding: 6px;
+}
+.card-edit_but {
+    min-width: 80px;
+    padding: 6px;
+    margin-right: 6px;
+}

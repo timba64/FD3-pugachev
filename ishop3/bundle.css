@@ -1,0 +1,64 @@
+.table-prods {
+    border-collapse: collapse;
+}
+.InetShop .head-row {
+    text-align: center;
+    background-color: olive;
+    color: #fff;
+}
+.InetShop .head-row th {
+    padding: 10px;
+}
+.InetShop .head-name {
+    width: 40%;
+    text-align: left;
+}
+.InetShop .head-price {
+    width: 60px;
+}
+.InetShop .qty {
+    width: 60px;
+}
+.InetShop .head-img {
+    width: 120px;
+    text-align: center;
+}
+.InetShop .prod-name {
+    width: 40%;
+}
+.InetShop .prod-price {
+    width: 60px;
+}
+.InetShop .qty {
+    width: 60px;
+}
+.InetShop .prod-img {
+    width: 80px;
+}
+
+.InetShop .prod-img img {
+    width: 80%;
+    height: auto;
+}
+.prod-row {
+    border-bottom: 1px solid olive;
+}
+.prod-row.red-row {
+    background-color: bisque;
+}
+.prod-row td {
+    padding: 10px;
+}
+.prod-row .td-price, .prod-row .td-qty {
+    text-align: right
+}
+.prod-row td:last-child {
+    text-align: center;
+}
+/**/
+.card-edit_row-title {
+    display: inline-block;
+    width: 140px;
+}
+
+/*# sourceMappingURL=bundle.css.map*/

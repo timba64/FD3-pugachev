@@ -1,0 +1,6 @@
+[ 
+    {"name":"htcm10","code":1,"price":650,"count":22,"img":"img/htcm10.jpg"}, 
+    {"name":"iphone7","code":2,"price":850,"count":13,"img":"img/iphone7.jpg"}, 
+    {"name":"lenovok6","code":3,"price": 450,"count":44,"img":"img/lenovok6.jpg"},
+    {"name":"samss7","code":4,"price": 500,"count":24,"img":"img/samss7.jpg"} 
+]

@@ -1,0 +1,13 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.row-el input {
+    margin-right: 10px;
+}
+
+.my-sel {
+    list-style: none;
+    padding-left: 25px;
+}

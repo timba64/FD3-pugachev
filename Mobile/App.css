@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    color: #070707;
+    font-size: 14px;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 0.67em 0;
+    color: dimgray;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 0.67em 0;
+    color: dimgray;
+  }
+  
+  h3 {
+    font-size: 2.0rem;
+    font-weight: 500;
+    margin: 0.67em 0;
+    color: dimgray;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0.67em 0;
+    color: dimgray;
+  }
+  

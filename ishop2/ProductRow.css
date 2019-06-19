@@ -1,0 +1,15 @@
+.prod-row {
+    border-bottom: 1px solid olive;
+}
+.prod-row.red-row {
+    background-color: bisque;
+}
+.prod-row td {
+    padding: 10px;
+}
+.prod-row .td-price, .prod-row .td-qty {
+    text-align: right
+}
+.prod-row td:last-child {
+    text-align: center;
+}
