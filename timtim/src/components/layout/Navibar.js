@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {Navbar, Nav} from 'react-bootstrap';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
+import { connect } from "react-redux";
 
 const Navibar = () => {
     return (
@@ -23,4 +24,12 @@ const Navibar = () => {
     )
   }
   
-  export default Navibar;
+  const mapStateToProps = state => {
+      console.log(state);
+    return {
+      auth: state.firebase.auth,
+      profile: state.firebase.profile.initials
+    };
+  };
+
+  export default connect(mapStateToProps)(Navibar);

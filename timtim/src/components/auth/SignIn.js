@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { connect } from "react-redux";
+import { signIn } from "../../store/actions/authActions";
+import {Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
 class SignIn extends Component {
 
@@ -17,10 +19,11 @@ class SignIn extends Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
-        //this.props.signIn(this.state);
+        this.props.signIn(this.state);
     };
 
     render() {
+        const { authError } = this.props;
         return (
         <Container>
             <Form className="signin-form" onSubmit={this.handleSubmit}>
@@ -37,11 +40,32 @@ class SignIn extends Component {
                         <Form.Control type="password" id='password' onChange={this.handleChange} />
                     </Col>
                 </Form.Group>
-                <Button variant="primary" type="submit">Login</Button>
+                <Form.Group as={Row} className="mb-4">
+                    <Col sm="12">
+                        <Button variant="primary" type="submit">Login</Button>
+                    </Col>
+                </Form.Group>
+                {authError ?
+                    <Alert variant="danger">
+                        <p>{authError}</p>
+                    </Alert> : null
+                }
             </Form>
         </Container>
         )
     }
 }
 
-export default SignIn;
+const mapStateToProps = (state) => {
+    return{
+      authError: state.auth.authError
+    }
+};
+  
+const mapDispatchToProps = (dispatch) => {
+    return {
+      signIn: (creds) => dispatch(signIn(creds))
+    }
+};
+  
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
