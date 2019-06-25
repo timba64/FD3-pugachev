@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
-import {Container, Card} from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 
 const AutoDetails = (props) => {
     const { auto, auth } = props;

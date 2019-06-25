@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Container,Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from "react-redux";
 import AutosList from "../autos/AutosList";
 import Notifications from "./Notifications";

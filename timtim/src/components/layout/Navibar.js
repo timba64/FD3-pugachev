@@ -1,6 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {Navbar, Nav} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar'
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from "react-redux";
@@ -27,7 +28,7 @@ const Navibar = (props) => {
     )
 }
   
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     //console.log(state);
     return {
         auth: state.firebase.auth,

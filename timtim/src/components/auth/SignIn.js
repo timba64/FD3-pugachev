@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signIn } from "../../store/actions/authActions";
-import {Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
 class SignIn extends Component {
 

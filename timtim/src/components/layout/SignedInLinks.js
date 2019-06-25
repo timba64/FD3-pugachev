@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Nav} from 'react-bootstrap';
+import Nav from 'react-bootstrap/Nav';
 import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
 
