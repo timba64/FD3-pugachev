@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { createAuto } from "../../store/actions/autoActions";
 
 class CreateAuto extends Component {
@@ -23,6 +24,12 @@ class CreateAuto extends Component {
     };
 
     render() {
+
+        const { auth } = this.props;
+        if (!auth.uid) {
+          return <Redirect to="/signin" />;
+        }
+
         return (
         <Container>
             <Form className="signin-form" onSubmit={this.handleSubmit}>
@@ -46,10 +53,16 @@ class CreateAuto extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+      auth: state.firebase.auth
+    }
+  }
+
 const mapDispatchToProps = dispatch => {
     return {
       createAuto: (auto) => dispatch(createAuto(auto))
     }
 }
 
-export default connect(null, mapDispatchToProps)(CreateAuto);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateAuto);

@@ -2,10 +2,15 @@ import React from 'react';
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { Redirect } from "react-router-dom";
 import {Container, Card} from 'react-bootstrap';
 
 const AutoDetails = (props) => {
-    const { auto } = props;
+    const { auto, auth } = props;
+
+    if (!auth.uid) {
+        return <Redirect to="/signin" />;
+    }
 
     if (auto) {
         return (
@@ -33,9 +38,10 @@ const mapStateToProps = (state, ownProps) => {
 //console.log(state);
     const id = ownProps.match.params.id;
     const autos = state.firestore.data.autos;
-    const auto = autos ? autos[id] : null
+
     return {
-      auto: auto
+      auto: autos ? autos[id] : null,
+      auth: state.firebase.auth
     }
 }
   
