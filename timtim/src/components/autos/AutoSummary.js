@@ -12,7 +12,7 @@ const AutoSummary = ({ auto }) => {
         <Card.Body>
         <Card.Title>{auto.title}</Card.Title>
         <Card.Text>{auto.content}</Card.Text>
-            <p>Posted by Ninja</p>
+            <p>Posted by {auto.authorFirstName} {auto.authorLastName}</p>
             <p className="grey-text">3rd okt 2018</p>
         </Card.Body>
     </Card>

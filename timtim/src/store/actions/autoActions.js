@@ -2,15 +2,16 @@ export const createAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
     // initializing functions to reference firebase
     const firestore = getFirestore();
-
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     // this below is asyncronous
     firestore
       .collection("autos")
       .add({
         ...auto,
-        authorFirstName: "san",
-        authorLastName: "San san",
-        authorId: 12345,
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorId: authorId,
         createdAt: new Date()
       })
       .then(() => {

@@ -7,13 +7,15 @@ import { signOut } from "../../store/actions/authActions";
 import './SignedInLinks.css';
 
 const SignedInLinks = (props) => {
-  return (
-    <Nav as="ul">
-        <Nav.Item as="li"><Link to='/create' className='nav-link'>New Auto</Link></Nav.Item>
-        <Nav.Item as="li"><Link to='/' className='nav-link' onClick={props.signOut}>Log Out</Link></Nav.Item>
-        <Nav.Item as="li"><Link to='/redo' className="btn btn-profil">NN</Link></Nav.Item>
-    </Nav>
-  )
+    return (
+        <Nav as="ul">
+            <Nav.Item as="li"><Link to='/create' className='nav-link'>New Auto</Link></Nav.Item>
+            <Nav.Item as="li"><Link to='/' className='nav-link' onClick={props.signOut}>Log Out</Link></Nav.Item>
+            <Nav.Item as="li">
+                <Link to='/redo' className="btn btn-profil">{props.profile.initials}</Link>
+            </Nav.Item>
+        </Nav>
+    )
 }
 
 const mapDispatchToProps = (dispatch) => {
