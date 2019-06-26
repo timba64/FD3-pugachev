@@ -7,6 +7,7 @@ import AutoDetails from "./components/autos/AutoDetails";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateAuto from "./components/autos/CreateAuto";
+import AdmPanel from "./components/panel/AdmPanel";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/signin" component={SignIn} exact />
                     <Route path="/signup" component={SignUp} exact />
                     <Route path="/create" component={CreateAuto} exact />
+                    <Route path="/panel" component={AdmPanel} exact />
                 </Switch>
             </div>
         </BrowserRouter>

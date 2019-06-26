@@ -11,18 +11,18 @@ class Dashboard extends Component {
     render() {
         const { autos, auth } = this.props;
 
-        if (!auth.uid) {
-            return <Redirect to="/signin" />;
-        }
+        // if (!auth.uid) {
+        //     return <Redirect to="/signin" />;
+        // }
   
         return (
             <Container className="dashboard mt-5">
                 <Row>
                     <Col xs={12} sm={8}>
-                    <AutosList autos={autos} />
+                        <AutosList autos={autos} />
                     </Col>
                     <Col xs={12} sm={4}>
-                    <Notifications />
+                        <Notifications />
                     </Col>
                 </Row>
             </Container>

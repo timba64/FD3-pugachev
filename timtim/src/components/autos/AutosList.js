@@ -3,6 +3,7 @@ import { CardDeck } from 'react-bootstrap';
 import AutoSummary from './AutoSummary';
 
 const AutosList = ({autos}) => {
+    //console.log(autos);
     return (
         <div className="project-list section">
            <CardDeck> 
