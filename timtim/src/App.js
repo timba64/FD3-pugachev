@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navibar from "./components/layout/Navibar";
 import Dashboard from "./components/dashboard/Dashboard";
 import AutoDetails from "./components/autos/AutoDetails";

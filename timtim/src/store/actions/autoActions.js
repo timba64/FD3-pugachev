@@ -16,7 +16,7 @@ export const createAuto = (auto) => {
       })
       .then(() => {
         dispatch({
-          type: "CREATE_AUTO",
+          type: "CREATE_AUTO", //  надо изменить на CREATE_AUTO_SUCCESS
           project: auto
         });
       })
