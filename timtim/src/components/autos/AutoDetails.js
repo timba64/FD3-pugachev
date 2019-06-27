@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
+import { editAuto } from "../../store/actions/autoActions";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 class AutoDetails extends Component {
@@ -79,9 +80,15 @@ console.log(state);
       auth: state.firebase.auth
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+      createAuto: (auto) => dispatch(editAuto(auto))
+    }
+}
   
 export default compose(
-    connect(mapStateToProps, ),
+    connect(mapStateToProps, mapDispatchToProps),
     firestoreConnect([{
       collection: 'autos'
     }])
