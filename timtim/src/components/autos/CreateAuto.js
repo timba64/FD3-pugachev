@@ -33,7 +33,7 @@ console.log(this.props);
         }
 
         return (
-        <Container>
+        <Container className="item-detail mt-3">
             <Form className="signin-form" onSubmit={this.handleSubmit}>
                 <h2 className="mb-3">Create new advert</h2>
                 <Form.Group as={Row}>

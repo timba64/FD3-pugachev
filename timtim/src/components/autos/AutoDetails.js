@@ -1,36 +1,71 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
-import { Container, Card } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-const AutoDetails = (props) => {
-    const { auto, auth } = props;
+class AutoDetails extends Component {
 
-    if (!auth.uid) {
-        return <Redirect to="/signin" />;
+    state = {
+        title: '',
+        content: ''
     }
 
-    if (auto) {
-        return (
-            <Container className="item-detail mt-5">
-                <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                <Card.Title>{auto.title}</Card.Title>
-                <Card.Text>{auto.content}</Card.Text>
-                    <p>Posted by {auto.authorFirstName} {auto.authorLastName}</p>
-                    <p className="grey-text">3rd okt 2018.</p>
-                </Card.Body>
-                </Card>
-            </Container>
-        )
-    } else {
-        return (
-            <Container className="item-detail mt-5">
-                <p>Loading project...</p>
-            </Container>
-        );
+    handleChange = e => {
+        this.setState({
+            [e.target.id]: e.target.value
+        });
+    };
+    
+    handleSubmit = e => {
+        e.preventDefault();
+        //console.log(this.state);
+        this.props.editAuto(this.state);
+        this.props.history.push('/panel');
+    };
+
+    render() {
+        const { auto, auth } = this.props;
+
+        if (!auth.uid) {
+            return <Redirect to="/signin" />;
+        }
+
+        if (auto) {
+            return (
+                <Container className="item-detail mt-3">
+                    <Form className="edit-form" onSubmit={this.handleSubmit}>
+                        <h2 className="mb-3">Edit your advert</h2>
+                        <Form.Group as={Row} controlId="sbTitle">
+                            <Form.Label column sm="2">
+                                Наименование
+                            </Form.Label>
+                            <Col sm="10">
+                                <Form.Control type="text" defaultValue={auto.title} onChange={this.handleChange} />
+                            </Col>
+                        </Form.Group>
+                        <Form.Group as={Row} controlId="sbContent">
+                            <Form.Label column sm="2">
+                                Описание
+                            </Form.Label>
+                            <Col sm="10">
+                                <Form.Control as="textarea" rows="3" defaultValue={auto.content} onChange={this.handleChange} />
+                            </Col>
+                        </Form.Group>
+                        <Button variant="primary" type="submit">Edit</Button>
+                    </Form>
+
+
+                </Container>
+            )
+        } else {
+            return (
+                <Container className="item-detail mt-5">
+                    <p>Loading project...</p>
+                </Container>
+            );
+        }
     }
 }
 
