@@ -9,8 +9,17 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 class AutoDetails extends Component {
 
     state = {
-        title: '',
-        content: ''
+        id: this.props.id,
+        title: "",
+        content: ""
+    }
+
+    componentDidMount = () =>{
+//console.log(this.props.auto);
+        if(this.props.auto) {
+            this.setState({title: this.props.auto.title});
+            this.setState({content: this.props.auto.content});
+        }
     }
 
     handleChange = e => {
@@ -21,14 +30,13 @@ class AutoDetails extends Component {
     
     handleSubmit = e => {
         e.preventDefault();
-        //console.log(this.state);
         this.props.editAuto(this.state);
         this.props.history.push('/panel');
     };
 
     render() {
         const { auto, auth } = this.props;
-
+console.log(this.state);
         if (!auth.uid) {
             return <Redirect to="/signin" />;
         }
@@ -38,7 +46,7 @@ class AutoDetails extends Component {
                 <Container className="item-detail mt-3">
                     <Form className="edit-form" onSubmit={this.handleSubmit}>
                         <h2 className="mb-3">Edit your advert</h2>
-                        <Form.Group as={Row} controlId="sbTitle">
+                        <Form.Group as={Row} controlId="title">
                             <Form.Label column sm="2">
                                 Наименование
                             </Form.Label>
@@ -46,7 +54,7 @@ class AutoDetails extends Component {
                                 <Form.Control type="text" defaultValue={auto.title} onChange={this.handleChange} />
                             </Col>
                         </Form.Group>
-                        <Form.Group as={Row} controlId="sbContent">
+                        <Form.Group as={Row} controlId="content">
                             <Form.Label column sm="2">
                                 Описание
                             </Form.Label>
@@ -56,8 +64,6 @@ class AutoDetails extends Component {
                         </Form.Group>
                         <Button variant="primary" type="submit">Edit</Button>
                     </Form>
-
-
                 </Container>
             )
         } else {
@@ -71,19 +77,20 @@ class AutoDetails extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-console.log(state);
+
     const id = ownProps.match.params.id;
     const autos = state.firestore.data.autos;
 
     return {
       auto: autos ? autos[id] : null,
-      auth: state.firebase.auth
+      auth: state.firebase.auth,
+      id: id
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-      createAuto: (auto) => dispatch(editAuto(auto))
+      editAuto: (edauto) => dispatch(editAuto(edauto))
     }
 }
   

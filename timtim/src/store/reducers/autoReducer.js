@@ -21,10 +21,10 @@ const initState = {
         console.log('delete auto error', action.err);
         return state;
       case 'EDIT_AUTO_SUCCESS':
-        console.log('delete auto success', action.project);
+        console.log('edit auto success', action.project);
         return state;
       case 'EDIT_AUTO_ERROR':
-        console.log('delete auto error', action.err);
+        console.log('edit auto error', action.err);
         return state;
       default:
         return state;

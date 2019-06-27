@@ -16,7 +16,7 @@ export const createAuto = (auto) => {
       })
       .then(() => {
         dispatch({
-          type: "CREATE_AUTO", //  надо изменить на CREATE_AUTO_SUCCESS
+          type: "CREATE_AUTO_SUCCESS",
           project: auto
         });
       })
@@ -30,18 +30,10 @@ export const editAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
     // initializing functions to reference firebase
     const firestore = getFirestore();
-    const profile = getState().firebase.profile;
-    const authorId = getState().firebase.auth.uid;
-    // this below is asyncronous
     firestore
       .collection("autos")
-      .add({
-        ...auto,
-        authorFirstName: profile.firstName,
-        authorLastName: profile.lastName,
-        authorId: authorId,
-        createdAt: new Date()
-      })
+      .doc(auto.id)
+      .update(auto)
       .then(() => {
         dispatch({
           type: "EDIT_AUTO_SUCCESS",
@@ -58,8 +50,6 @@ export const deleteAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
     // initializing functions to reference firebase
     const firestore = getFirestore();
-
-    // this below is asyncronous
     firestore
       .collection("autos")
       .doc(auto.id)
