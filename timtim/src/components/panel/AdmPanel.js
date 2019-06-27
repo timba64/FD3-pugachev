@@ -10,7 +10,7 @@ class AdmPanel extends Component {
 
     render(){
         const { autos, auth } = this.props;
-
+console.log(this.props);
         if (!auth.uid) {
             return <Redirect to="/signin" />;
         }
@@ -24,7 +24,6 @@ class AdmPanel extends Component {
 }
 
 const mapStateToProps = state => {
-
     return {
         autos: state.firestore.ordered.autos,
         auth: state.firebase.auth

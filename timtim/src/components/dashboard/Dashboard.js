@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from "react-redux";
 import AutosList from "../autos/AutosList";
@@ -9,11 +8,7 @@ import { compose } from "redux";
 
 class Dashboard extends Component {
     render() {
-        const { autos, auth } = this.props;
-
-        // if (!auth.uid) {
-        //     return <Redirect to="/signin" />;
-        // }
+        const { autos } = this.props;
   
         return (
             <Container className="dashboard mt-5">

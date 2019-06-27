@@ -25,3 +25,25 @@ export const createAuto = (auto) => {
       });
     }
 };
+
+export const deleteAuto = (auto) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+    // initializing functions to reference firebase
+    const firestore = getFirestore();
+
+    // this below is asyncronous
+    firestore
+      .collection("autos")
+      .doc(auto.id)
+      .delete()
+      .then(() => {
+        dispatch({
+          type: "DELETE_AUTO_SUCCESS",
+          project: auto
+        });
+      })
+      .catch(err => {
+        dispatch({ type: "DELETE_AUTO_ERROR", err });
+      });
+    }
+};

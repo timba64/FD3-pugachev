@@ -21,12 +21,13 @@ class CreateAuto extends Component {
         e.preventDefault();
         //console.log(this.state);
         this.props.createAuto(this.state);
-        this.props.history.push('/');
+        this.props.history.push('/panel');
     };
 
     render() {
-
+console.log(this.props);
         const { auth } = this.props;
+        
         if (!auth.uid) {
           return <Redirect to="/signin" />;
         }
@@ -58,7 +59,7 @@ const mapStateToProps = (state) => {
     return {
       auth: state.firebase.auth
     }
-  }
+}
 
 const mapDispatchToProps = dispatch => {
     return {

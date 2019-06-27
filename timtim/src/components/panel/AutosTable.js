@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import AutosRow from './AutosRow';
 
 const AutosTable = ({autos}) => {
-console.log(autos);
+//console.log(autos);
     return(
         <Table responsive>
             <thead>
