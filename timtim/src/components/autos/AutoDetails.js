@@ -35,7 +35,7 @@ const AutoDetails = (props) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-//console.log(state);
+console.log(state);
     const id = ownProps.match.params.id;
     const autos = state.firestore.data.autos;
 
