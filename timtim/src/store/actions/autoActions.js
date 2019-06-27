@@ -26,6 +26,34 @@ export const createAuto = (auto) => {
     }
 };
 
+export const editAuto = (auto) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+    // initializing functions to reference firebase
+    const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
+    // this below is asyncronous
+    firestore
+      .collection("autos")
+      .add({
+        ...auto,
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorId: authorId,
+        createdAt: new Date()
+      })
+      .then(() => {
+        dispatch({
+          type: "EDIT_AUTO_SUCCESS",
+          project: auto
+        });
+      })
+      .catch(err => {
+        dispatch({ type: "EDIT_AUTO_ERROR", err });
+      });
+    }
+};
+
 export const deleteAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
     // initializing functions to reference firebase
