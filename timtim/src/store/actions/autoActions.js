@@ -1,3 +1,5 @@
+import type from '../types'
+
 export const createAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
     // initializing functions to reference firebase
@@ -16,12 +18,12 @@ export const createAuto = (auto) => {
       })
       .then(() => {
         dispatch({
-          type: "CREATE_AUTO_SUCCESS",
+          type: type.CREATE_AUTO_SUCCESS,
           project: auto
         });
       })
       .catch(err => {
-        dispatch({ type: "CREATE_AUTO_ERROR", err });
+        dispatch({ type: type.CREATE_AUTO_ERROR, err });
       });
     }
 };
@@ -36,12 +38,12 @@ export const editAuto = (auto) => {
       .update(auto)
       .then(() => {
         dispatch({
-          type: "EDIT_AUTO_SUCCESS",
+          type: type.EDIT_AUTO_SUCCESS,
           project: auto
         });
       })
       .catch(err => {
-        dispatch({ type: "EDIT_AUTO_ERROR", err });
+        dispatch({ type: type.EDIT_AUTO_ERROR, err });
       });
     }
 };
@@ -56,12 +58,12 @@ export const deleteAuto = (auto) => {
       .delete()
       .then(() => {
         dispatch({
-          type: "DELETE_AUTO_SUCCESS",
+          type: type.DELETE_AUTO_SUCCESS,
           project: auto
         });
       })
       .catch(err => {
-        dispatch({ type: "DELETE_AUTO_ERROR", err });
+        dispatch({ type: type.DELETE_AUTO_ERROR, err });
       });
     }
 };

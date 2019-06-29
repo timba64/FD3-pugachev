@@ -36,7 +36,7 @@ class AutoDetails extends Component {
 
     render() {
         const { auto, auth } = this.props;
-console.log(this.state);
+console.log("render from AutoDetails");
         if (!auth.uid) {
             return <Redirect to="/signin" />;
         }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CardImg from '../../img/holder.png';
 
 const AutoSummary = ({ auto }) => {
+console.log('render from AutoSummary');
   return (
     <Card style={{ width: '18rem', marginBottom: '1rem' }}>
         <Link to={`/auto/${auto.id}`}>

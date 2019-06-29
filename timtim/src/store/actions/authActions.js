@@ -1,3 +1,5 @@
+import type from '../types'
+
 export const signIn = (credentials) => {
     return (dispatch, getState, {getFirebase}) => {
         const firebase = getFirebase();
@@ -6,9 +8,9 @@ export const signIn = (credentials) => {
             credentials.email,
             credentials.password
         ).then(() => {
-            dispatch({ type: 'LOGIN_SUCCESS' });
+            dispatch({ type: type.LOGIN_SUCCESS });
         }).catch((err) => {
-            dispatch({ type: 'LOGIN_ERROR', err });
+            dispatch({ type: type.LOGIN_ERROR, err });
         });
   
     }
@@ -19,7 +21,7 @@ export const signOut = () => {
         const firebase = getFirebase();
     
         firebase.auth().signOut().then(() => {
-            dispatch({ type: 'SIGNOUT_SUCCESS' });
+            dispatch({ type: type.SIGNOUT_SUCCESS });
         });
     }
 }
@@ -43,10 +45,10 @@ export const signUp = newUser => {
             });
         }) // we make a record of a new user in the new collection called 'users'
         .then(() => {
-            dispatch({ type: "SIGNUP_SUCCESS" });
+            dispatch({ type: type.SIGNUP_SUCCESS });
         })
         .catch(err => {
-            dispatch({ type: "SIGNUP_ERROR", err });
+            dispatch({ type: type.SIGNUP_ERROR, err });
         });
   };
 };
