@@ -25,7 +25,7 @@ class CreateAuto extends Component {
     };
 
     render() {
-console.log(this.props);
+console.log('render from CreateAuto');
         const { auth } = this.props;
         
         if (!auth.uid) {

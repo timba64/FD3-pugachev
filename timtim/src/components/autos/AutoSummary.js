@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import CardImg from '../../img/holder.png';
@@ -14,7 +15,7 @@ console.log('render from AutoSummary');
         <Card.Title>{auto.title}</Card.Title>
         <Card.Text>{auto.content}</Card.Text>
             <p>Posted by {auto.authorFirstName} {auto.authorLastName}</p>
-            <p className="grey-text">3rd okt 2018</p>
+            <p className="grey-text">{moment(auto.createdAt.toDate()).calendar()}</p>
         </Card.Body>
     </Card>
   );

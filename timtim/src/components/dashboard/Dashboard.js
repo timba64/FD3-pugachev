@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from "react-redux";
 import AutosList from "../autos/AutosList";
-import Notifications from "./Notifications";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
@@ -13,11 +12,8 @@ class Dashboard extends Component {
         return (
             <Container className="dashboard mt-5">
                 <Row>
-                    <Col xs={12} sm={8}>
+                    <Col sm={12}>
                         <AutosList autos={autos} />
-                    </Col>
-                    <Col xs={12} sm={4}>
-                        <Notifications />
                     </Col>
                 </Row>
             </Container>
