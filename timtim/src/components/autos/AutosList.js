@@ -1,18 +1,18 @@
 import React from "react";
-import { CardDeck } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
 import AutoSummary from './AutoSummary';
 
 const AutosList = ({autos}) => {
 console.log('render from AutosList');
     return (
         <div className="project-list section">
-           <CardDeck> 
+           <Row> 
                 { autos && autos.map(item => {
                     return (                   
                         <AutoSummary auto={item} key={item.id} /> 
                     )
                 })} 
-            </CardDeck>
+            </Row>
         </div>
     );
 };
