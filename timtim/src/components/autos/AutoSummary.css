@@ -1,0 +1,13 @@
+.card-auto a {
+    overflow: hidden;
+}
+
+.card-auto .card-img-top {
+    opacity: 0.8;
+    transition: all 350ms ease;
+}
+
+.card-auto .card-img-top:hover {
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);;
+}

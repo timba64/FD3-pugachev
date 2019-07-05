@@ -1,8 +1,8 @@
 import React from 'react';
-import {Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import {storage} from "../../config/fbconfig";
+import { storage } from "../../config/fbconfig";
 import { createAuto } from "../../store/actions/autoActions";
 import './CreateAuto.css';
 
