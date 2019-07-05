@@ -21,7 +21,12 @@ class SignUp extends Component {
     
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state);
+
+        const arr = this.state.email.split('@');
+        const checkMail = arr[1] === 'list.ru' ? true : false;
+        if(!checkMail) {
+            return this.props.history.push('/errauth');
+        }
         this.props.signUp(this.state);
     };
 
@@ -63,7 +68,7 @@ class SignUp extends Component {
                 </Form.Group>
                 <Form.Group as={Row} className="mb-4">
                     <Col sm="12">
-                        <Button variant="primary" type="submit">Login</Button>
+                        <Button variant="primary" type="submit">Sign up</Button>
                     </Col>
                 </Form.Group>
                 {authError ?

@@ -8,6 +8,8 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import CreateAuto from "./components/autos/CreateAuto";
 import AdmPanel from "./components/panel/AdmPanel";
+import AboutPage from "./components/about/AboutPage";
+import ErrAuth from "./components/auth/ErrAuth";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/signup" component={SignUp} exact />
                     <Route path="/create" component={CreateAuto} exact />
                     <Route path="/panel" component={AdmPanel} exact />
+                    <Route path="/about" component={AboutPage} exact />
+                    <Route path="/errauth" component={ErrAuth} exact />
                 </Switch>
             </div>
         </BrowserRouter>

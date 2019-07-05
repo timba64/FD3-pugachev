@@ -21,14 +21,14 @@ const Navibar = (props) => {
     )
 
     return (
-        <Navbar bg="light" expand="lg" className="shadow-sm border-bottom mb-3">
+        <Navbar bg="light" expand="lg" className="shadow-sm border-bottom mb-3 p-3">
             <Navbar.Brand href="/">TIM-TIM</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                 <Nav as="ul">
                     
                     {homeLink}
-                    <Nav.Item as="li"><Link to='/redo' className="nav-link">About</Link></Nav.Item>
+                    <Nav.Item as="li"><Link to='/about' className="nav-link">About</Link></Nav.Item>
                 </Nav>
                 {links}
             </Navbar.Collapse>

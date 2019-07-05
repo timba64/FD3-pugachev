@@ -22,7 +22,7 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-//console.log(state);
+console.log("render from Dashboard");
     return {
         autos: state.firestore.ordered.autos,
         auth: state.firebase.auth

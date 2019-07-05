@@ -16,7 +16,8 @@ class AdmPanel extends Component {
         }
 
         return(
-            <Container className="dashboard mt-5">
+            <Container className="dashboard mt-3">
+                <h2 className="mb-3">Full list of adverts</h2>
                 <AutosTable autos={autos} />
             </Container>
         )
