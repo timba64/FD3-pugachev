@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import err from './error-auth';
 
 const ErrAuth = () => {
-    console.log('render from AboutPage');
+console.log('render from AboutPage');
     return (
         <Container>
             <div className="page-content">

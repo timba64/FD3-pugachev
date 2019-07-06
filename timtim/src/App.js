@@ -22,9 +22,9 @@ function App() {
                     <Route path="/signin" component={SignIn} exact />
                     <Route path="/signup" component={SignUp} exact />
                     <Route path="/create" component={CreateAuto} exact />
-                    <Route path="/panel" component={AdmPanel} exact />
-                    <Route path="/about" component={AboutPage} exact />
-                    <Route path="/errauth" component={ErrAuth} exact />
+                    <Route path="/panel" component={AdmPanel} />
+                    <Route path="/about" component={AboutPage} />
+                    <Route path="/errauth" component={ErrAuth} />
                 </Switch>
             </div>
         </BrowserRouter>
