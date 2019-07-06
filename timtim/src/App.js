@@ -19,9 +19,9 @@ function App() {
                 <Switch>
                     <Route path="/" component={Dashboard} exact />
                     <Route path="/auto/:id" component={AutoDetails} />
-                    <Route path="/signin" component={SignIn} exact />
-                    <Route path="/signup" component={SignUp} exact />
-                    <Route path="/create" component={CreateAuto} exact />
+                    <Route path="/signin" component={SignIn} />
+                    <Route path="/signup" component={SignUp} />
+                    <Route path="/create" component={CreateAuto} />
                     <Route path="/panel" component={AdmPanel} />
                     <Route path="/about" component={AboutPage} />
                     <Route path="/errauth" component={ErrAuth} />

@@ -4,15 +4,14 @@ import { connect } from "react-redux";
 import AutosList from "../autos/AutosList";
 import { firestoreConnect, isLoaded, isEmpty } from "react-redux-firebase";
 import { compose } from "redux";
+import ReactLoading from 'react-loading';
 
 class Dashboard extends Component {
     render() {
         const { autos } = this.props;
+        if ( !isLoaded(autos) ) { return <Container><ReactLoading type='balls' color='#17a2b8' /></Container> }
+        if ( isEmpty(autos) ) { return <Container><div> Список Todo пуст </ div></Container> }
 console.log("render from Dashboard");
-
-        if (! isLoaded (autos)) { return <div> Загрузка ... </ div> }
-        if (isEmpty (autos))    { return <div> Список Todo пуст </ div> }
-
         return (
             <Container className="dashboard mt-5">
                 <Row>
@@ -34,9 +33,6 @@ const mapStateToProps = state => {
 };
 
 export default compose(
-    connect(
-        mapStateToProps,
-        null
-    ),
+    connect( mapStateToProps ),
     firestoreConnect([{ collection: "autos" }])
 )(Dashboard);
