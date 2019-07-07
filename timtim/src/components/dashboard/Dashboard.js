@@ -34,5 +34,5 @@ const mapStateToProps = state => {
 
 export default compose(
     connect( mapStateToProps ),
-    firestoreConnect([{ collection: "autos" }])
+    firestoreConnect([{ collection: "autos", limit: 3 }])
 )(Dashboard);
