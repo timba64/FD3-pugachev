@@ -1,10 +1,12 @@
-const initState = {
-    autos: [
-      { id: "1", title: "BMW-320", content: "1998y, 3.0, blue, super state, 5000$" },
-      { id: "2", title: "Mercedes-s500", content: "2007y, 5.0, white, full options, leather interior, 4000$" },
-      { id: "3", title: "Volkswagen Passat", content: "2008y, 2.0turbo, red, full options, super state, 6000$" }
-    ]
-  };
+// const initState = {
+//     autos: [
+//       { id: "1", title: "BMW-320", content: "1998y, 3.0, blue, super state, 5000$" },
+//       { id: "2", title: "Mercedes-s500", content: "2007y, 5.0, white, full options, leather interior, 4000$" },
+//       { id: "3", title: "Volkswagen Passat", content: "2008y, 2.0turbo, red, full options, super state, 6000$" }
+//     ]
+//   };
+
+const initState = {};
 
   const autoReducer = (state = initState, action) => {
     switch (action.type) {
@@ -26,6 +28,18 @@ const initState = {
       case 'EDIT_AUTO_ERROR':
         console.log('edit auto error', action.err);
         return state;
+      case 'ASYNC_ACTION_ERROR':
+        console.log('async action error', action.err);
+        return {...state};
+      case 'ASYNC_ACTION_START':
+        console.log('async action start');
+        return {...state};
+      case 'ASYNC_ACTION_FINISH':
+        console.log('async action finish');
+        return {...state};
+      case 'FETCH_AUTOS':
+        console.log('fetch autos - ', action.payload.autos);
+        return action.payload.autos;
       default:
         return state;
     }

@@ -53,7 +53,7 @@ class AutoDetails extends Component {
         const uploadTask = storage.ref(`images/${image.name}`).put(image);
         uploadTask.on('state_changed', 
             (snapshot) => {
-            // progrss function ....
+            // progres function ....
             const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
             this.setState({progress});
             }, 

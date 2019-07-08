@@ -1,4 +1,5 @@
-import type from '../types'
+import type from '../types';
+import firebase from "../../config/fbconfig";
 
 export const createAuto = (auto) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
@@ -65,5 +66,49 @@ export const deleteAuto = (auto) => {
       .catch(err => {
         dispatch({ type: type.DELETE_AUTO_ERROR, err });
       });
+    }
+};
+
+export const getAutosForDashboard = (lastAuto) => async (dispatch, getState) => {
+
+    const firestore = firebase.firestore();
+    const autosRef = firestore.collection('autos');
+    try {
+        dispatch({type: type.ASYNC_ACTION_START});
+        let startAfter =
+            lastAuto &&
+            (await firestore
+                .collection('autos')
+                .doc(lastAuto.id)
+                .get());
+
+        let query;
+
+        lastAuto
+            ? ( query = autosRef
+                .startAfter(startAfter)
+                .limit(3))
+            : ( query = autosRef
+                .limit(3));
+
+        let querySnap = await query.get();
+
+        if (querySnap.docs.length === 0) {
+            dispatch({type: type.ASYNC_ACTION_FINISH});
+            return querySnap;
+        }
+
+        let autos = [];
+
+        for (let i = 0; i < querySnap.docs.length; i++) {
+            let avt = { ...querySnap.docs[i].data(), id: querySnap.docs[i].id };
+            autos.push(avt);
+        }
+        dispatch({ type: type.FETCH_AUTOS, payload: {autos} });
+        dispatch({type: type.ASYNC_ACTION_FINISH});
+        return querySnap;
+    } catch (error) {
+        console.log(error);
+        dispatch({type: type.ASYNC_ACTION_ERROR, error});
     }
 };
